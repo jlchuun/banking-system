@@ -10,6 +10,10 @@ import java.util.regex.Pattern;
 
 public class Server {
 	private ServerSocket server = null;
+	static final String TELLER_FILE = "../tellers.txt";
+	static final String ACCOUNTS_FILE = "../accounts.txt";
+	static final String TRANS_FILE = "../transactions.txt";
+	static final String CUST_FILE = "../customers.txt";
 	
 	// card number : Customer
 	private static HashMap<String, Customer> customers = new HashMap<String, Customer>();
@@ -90,7 +94,7 @@ public class Server {
 	// first name, last name, card number, PIN, account numbers (checking/saving)
 	public static void loadCustomers() {
 		try {
-			File customerData = new File("customers.txt");
+			File customerData = new File(CUST_FILE);
 			Scanner reader = new Scanner(customerData);
 			reader.useDelimiter(Pattern.compile("[\\r\\n,]+"));
 			while (reader.hasNext()) {
@@ -116,7 +120,7 @@ public class Server {
 	// account number, balance
 	public static void loadAccounts() {
 		try {
-			File accountData = new File("accounts.txt");
+			File accountData = new File(ACCOUNTS_FILE);
 			Scanner reader = new Scanner(accountData);
 			reader.useDelimiter(Pattern.compile("[\\r\\n,]+"));
 			while (reader.hasNext()) {
@@ -136,7 +140,7 @@ public class Server {
 	// teller user, teller password
 	public static void loadTellers() {
 		try {
-			File tellerData = new File("tellers.txt");
+			File tellerData = new File(TELLER_FILE);
 			Scanner reader = new Scanner(tellerData);
 			reader.useDelimiter(Pattern.compile("[\\r\\n,]+"));
 			while (reader.hasNext()) {
@@ -155,7 +159,7 @@ public class Server {
 	// account number, target, amount, request, date
 	public static void loadTransactions() throws ParseException {
 		try {
-			File transactionData = new File("transactions.txt");
+			File transactionData = new File(TRANS_FILE);
 			Scanner reader = new Scanner(transactionData);
 			reader.useDelimiter(Pattern.compile("[\\r\\n,]+"));
 			DateTimeFormatter dateFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
@@ -188,7 +192,7 @@ public class Server {
 	
 	public static void save() {
 		try {
-			FileWriter accountsFile = new FileWriter("accounts.txt");
+			FileWriter accountsFile = new FileWriter(ACCOUNTS_FILE);
 			FileWriter customersFile = new FileWriter("customers.txt");
 			FileWriter tellersFile = new FileWriter("tellers.txt");
 			FileWriter transactionsFile = new FileWriter("transactions.txt");
