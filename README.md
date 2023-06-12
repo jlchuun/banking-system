@@ -1,28 +1,65 @@
-# cs401-banking-system
+# Banking-System
 
-## What the project is about
-- This is a banking system that works over a mutli threaded server
-- There are two ways that a customer can access the banking system via ATM or through a Bank Teller that can help
-- The ATM provide simple tasks like depositing and withdrawals as well as transferring money back and forth between checking and savings
-- the Bank Teller can create and delete customers if needed
+## Description
+Banking system with desktop applications for ATMs and for bank tellers. Provides basic ATM functions and allows tellers to manage existing or new customers.
 
-## How to use
-- This project is to be ran on an IDE thtat supports Java
-- All files in the src folder as well as the txt files should be downloaded and put into a project folder in the IDE
-- You will have to run the server first then the two GUI either the ATMGUI or the BankTellerGUI
-- Once logged in you can do your transactions and they will be saved once you log off
-
-## Credits
-- https://github.com/joshualchung
-- https://github.com/BurandonC
+Built as a group project following the software development lifecycle (SDLC). Incorporates Object-Oriented Programming (OOP) principles and multithreaded client-server design pattern.
 
 ## Features
 - GUI for ATM and a Bank Teller
 - Login system for both
-- Basic functions like depositing and withdrawing money
-- Bank Teller will have functions for creating and deleting customer objects
-- A save will be applied when the user logs off the system
-- All customers and teller employees are stored on a hashmap as well as their money and transactions which doubles as a history
+- ATM GUI provides all basic ATM functions for checkings/savings accounts
+- Teller GUI allows management of customer accounts along with transfers to other accounts
+- Updates files in realtime allowing for concurrent actions on same accounts
+- Transaction history is saved onto file for each account
 
-## How to contribute
-- IDK lol
+## Installation
+
+### Prerequisites
+- JUnit5 for testing
+  - junit.jupiter
+  - junit.platform.suite
+- Java 20
+1. Navigate to src folder
+2. Compile Java files
+```
+javac app/*.java
+```
+3. Run Server.java.
+```
+java app.Server
+```
+4. Run GUI
+  - Option 1: For ATM
+  ```
+  java app.ATMGUI
+  ```
+  - Option 2: For Bank Teller
+  ```
+  java app.BankTellerGUI
+  ```
+
+## Usage
+ATM Usage:
+After entering card number and corresponding PIN, customers can perform basic ATM functions.
+
+![image](https://github.com/jlchuun/banking-system/assets/44554795/05441424-9c2a-4274-873f-c22cd6972cc1)
+
+Bank Teller Usage:
+After logging in with valid teller username and password, teller has options to manage customer accounts.
+
+![image](https://github.com/jlchuun/banking-system/assets/44554795/ba92d58b-4f50-4e31-92f5-c5ed412f6c12)
+
+
+
+
+## Credits
+Joshua Chung
+- https://github.com/joshualchung
+- https://github.com/jlchuun
+
+Brandon Chau
+- https://github.com/BurandonC
+
+
+ 
